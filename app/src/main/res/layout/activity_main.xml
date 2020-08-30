@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    android:backgroundTintMode="add"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:contentDescription="Boton para Reiniciar el juego"
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:background="#00803C3C"
+        android:foregroundTint="#00A62424"
+        android:onClick="resetButton"
+        android:text="@string/reset"
+        android:textColor="#FAF6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scoreTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953" />
+
+    <TextView
+        android:contentDescription="Muestra el puntaje del juego"
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 : 0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
+
+    <TextView
+        android:contentDescription="Muestra la seleccion del NPC en texto"
+        android:id="@+id/npcSelectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:text="Paper"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/scissorsView"
+        app:layout_constraintStart_toEndOf="@+id/scoreTextView"
+        app:layout_constraintTop_toBottomOf="@+id/npcImageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:contentDescription="Muestra la seleccion del usuario en imagen"
+        android:id="@+id/userImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="48dp"
+        android:background="#F8F5F5"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/rockView"
+        app:layout_constraintEnd_toStartOf="@+id/scoreTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageView
+        android:contentDescription="Muestra la seleccion aleatorio del Npc"
+        android:id="@+id/npcImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="12dp"
+
+        android:background="#F87575"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/scoreTextView"
+        app:layout_constraintStart_toEndOf="@+id/scoreTextView"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <TextView
+        android:contentDescription="Muestra la seleccion del usuario"
+        android:id="@+id/userSelectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="68dp"
+        android:text="Rock"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/scoreTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageView
+        android:contentDescription="Boton para seleccionar Piedra"
+        android:id="@+id/rockView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="4dp"
+        android:onClick="rpsButtonSelected"
+        android:scaleType="fitCenter"
+        android:tag="1"
+        app:layout_constraintEnd_toStartOf="@+id/paperView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WonLostTieTextView"
+        app:srcCompat="@drawable/rock2"
+        />
+
+    <TextView
+        android:contentDescription="Muestra el resultado final del juego"
+        android:id="@+id/WonLostTieTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00D1CFCF"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <ImageView
+        android:contentDescription="Boton para seleccionar Papel"
+        android:id="@+id/paperView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:onClick="rpsButtonSelected"
+        android:scaleType="fitCenter"
+
+        android:tag="2"
+        app:layout_constraintEnd_toStartOf="@+id/scissorsView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rockView"
+        app:layout_constraintTop_toBottomOf="@+id/WonLostTieTextView"
+        app:srcCompat="@drawable/paperf" />
+
+    <ImageView
+        android:contentDescription="Boton para seleccionar Tijera"
+        android:id="@+id/scissorsView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="rpsButtonSelected"
+        android:scaleType="fitCenter"
+        android:tag="3"
+        app:layout_constraintBottom_toBottomOf="@+id/paperView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/paperView"
+        app:layout_constraintTop_toBottomOf="@+id/WonLostTieTextView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/scissorsf" />
+
+    <TextView
+        android:contentDescription="Muestra el nombre del jugador"
+        android:id="@+id/UsernameDFBU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#59252424"
+
+        android:text="Jugador 1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#F1DFDF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rockView"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:contentDescription="Muestra el nombre del NPC"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="96dp"
+        android:background="#59101010"
+        android:text="NPC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#F8F4F4"
+        app:layout_constraintBottom_toTopOf="@+id/npcImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

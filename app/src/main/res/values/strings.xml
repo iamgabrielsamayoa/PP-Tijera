@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PPTijera</string>
+    <string name="player_name">Jugador 1</string>
+    <string name="reset">Reset</string>
+</resources>
